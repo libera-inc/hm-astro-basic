@@ -1,0 +1,57 @@
+---
+import "@src/styles/variable.scss";
+import "@src/styles/global.scss";
+import "@src/styles/reset.scss";
+import "@src/styles/base.scss";
+import "@src/styles/utility.scss";
+import Header from "@src/layouts/Header.astro";
+import Footer from "@src/layouts/Footer.astro";
+---
+
+<html lang='ja'>
+    <head>
+        <meta charset='utf-8' />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <meta name='viewport' content='width=device-width' />
+        <meta name='generator' content={Astro.generator} />
+        <title>Astroの勉強</title>
+    </head>
+
+    <body>
+        <div class='wrap'>
+            <Header />
+            <main class='main'>
+                <div class='container'>
+                    <slot />
+                </div>
+            </main>
+            <Footer />
+        </div>
+    </body>
+</html>
+
+<style lang='scss'>
+    @use "@src/styles/global.scss" as g;
+
+    .wrap {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .main {
+        flex: 1;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%;
+        max-width: var(--width-content);
+        margin: 0 auto;
+        padding: 64px 0;
+
+        @include g.mq() {
+            padding: 80px 0;
+        }
+    }
+</style>

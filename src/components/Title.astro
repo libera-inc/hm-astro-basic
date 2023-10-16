@@ -1,0 +1,17 @@
+<h1 class='title'>
+    <slot />
+</h1>
+
+<style lang='scss'>
+    @use "@src/styles/global.scss" as g;
+
+    .title {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+
+        @include g.mq() {
+            font-size: 32px;
+        }
+    }
+</style>

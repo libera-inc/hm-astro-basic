@@ -1,0 +1,20 @@
+<header class='header'>
+    <p>header</p>
+</header>
+
+<style lang='scss'>
+    @use "@src/styles/global.scss" as g;
+
+    .header {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 24px;
+        text-transform: uppercase;
+        background-color: #f2f2f2;
+
+        @include g.mq() {
+            font-size: 22px;
+        }
+    }
+</style>
